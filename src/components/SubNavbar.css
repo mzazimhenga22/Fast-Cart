@@ -1,0 +1,32 @@
+/* SubNavbar.css */
+.subnavbar {
+    background-color: #f704045e;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .subnavbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .subnavbar-menu li {
+    margin-right: 1rem;
+  }
+  
+  .subnavbar-menu li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 0.75rem;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+  }
+  
+  .subnavbar-menu li a:hover {
+    background-color: #4f93ce;
+    color: #fff;
+  }
+  

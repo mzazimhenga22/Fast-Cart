@@ -1,0 +1,23 @@
+/* orders.css */
+.orders-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .orders-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .orders-container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .orders-container p {
+    font-size: 1rem;
+    color: #555;
+  }
+  

@@ -1,0 +1,23 @@
+/* payment-settings.css */
+.payment-settings-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .payment-settings-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .payment-settings-container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .payment-settings-container p {
+    font-size: 1rem;
+    color: #555;
+  }
+  

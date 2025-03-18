@@ -1,0 +1,126 @@
+/* Reset margin/padding and ensure full height */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Container for the entire admin blog page */
+.admin-blog-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content area below the navbars */
+.admin-blog-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px; /* optional max width */
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f4f4f4;
+  box-sizing: border-box;
+}
+
+.page-title {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+/* Card-like sections for form and posts */
+.admin-form-section,
+.admin-posts-section {
+  background: #fff;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-form-section h2,
+.admin-posts-section h2 {
+  margin-top: 0;
+}
+
+/* Form styling */
+.admin-blog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: inherit;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.admin-blog-form button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: #ff6f61;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.admin-blog-form button[type='button'] {
+  background-color: #aaa;
+}
+
+/* Posts list styling */
+.admin-posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-posts-list li {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.admin-post-actions {
+  margin-top: 1rem;
+}
+
+.admin-post-actions button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-post-actions button:first-of-type {
+  background-color: #0070f3;
+  color: #fff;
+}
+
+.admin-post-actions button:last-of-type {
+  background-color: #ff6f61;
+  color: #fff;
+}

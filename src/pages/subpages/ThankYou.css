@@ -1,0 +1,70 @@
+
+/* Main container for centering the popup */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background: #f9f9f9;
+    padding: 2rem;
+  }
+  
+  /* Popup styling with initial scale/opacity for animation */
+  .popup {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Class applied when animation is triggered */
+  .show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Flower container styling */
+  .flowerContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Flower image styling with floating animation */
+  .flower {
+    width: 50px;
+    height: 50px;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Keyframes for a gentle floating effect */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  /* Button styling */
+  button {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

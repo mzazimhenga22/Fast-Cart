@@ -1,0 +1,246 @@
+/* Product Card Container */
+.product-card {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    position: relative;
+    max-width: 200px;
+    /* Removed fixed height to allow the card to expand with its content */
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Product Card Image */
+  .product-card-image {
+    height: 120px; /* Fixed height for the image section */
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  
+  .product-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Discount Overlay */
+  .product-card-discount-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff79c6; /* Bright pink for contrast */
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  /* Product Card Body */
+  .product-card-body {
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    color: #fff;
+    /* No overflow: auto; we want the card to expand with the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Product Title */
+  .product-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  /* Product Description */
+  .product-card-description {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+  }
+  
+  /* Pricing Section */
+  .product-card-pricing {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .product-card-new-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .product-card-old-price {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    color: #ccc;
+    text-decoration: line-through;
+  }
+  
+  /* Add to Cart Button */
+  .add-to-cart-button {
+    background-color: #9b59b6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-to-cart-button:hover {
+    background-color: #8e44ad;
+  }
+  
+  /* Organizer Container & Card Grid styles remain unchanged */
+  
+  
+  /* Organizer Container: Overall layout for grouped categories */
+  .organizer-container {
+    padding: 1rem;
+  }
+  
+  /* Each Category Group */
+  .category-group {
+    margin-bottom: 2rem;
+  }
+  
+  /* 
+    Card Grid: now a horizontal "carousel" row
+    - flex-wrap: nowrap => forces a single row
+    - overflow-x: auto => scroll horizontally if cards exceed container width
+    - gap => space between cards
+    - child elements => flex: 0 0 auto to keep each card at its own width
+  */
+  .card-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem; /* some bottom spacing if needed */
+    margin-bottom: 2rem;
+  }
+  
+  /* Hide scrollbar on WebKit (optional) */
+  .card-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .card-grid > * {
+    flex: 0 0 auto;
+  }
+  
+  /* Banner Container */
+  .banner-image-container {
+    width: 100%;
+    height: 100px; /* Set desired fixed height */
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Banner Image: Force image to fill container */
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Additional Banner Styling */
+  .banner {
+    position: relative;
+    background-color: #ff046d;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .banner-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #fff; /* White text on a vibrant pink background */
+  }
+  
+  .banner p {
+    font-size: 1rem;
+    color: #fff; /* Light color to contrast with the vibrant pink */
+    margin: 0;
+  }
+  
+  /* Optional: Add a hover effect if desired */
+  .banner:hover {
+    background-color: #e91e63; /* Slightly darker pink on hover */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Deals of the Day section styling */
+  .deals-of-the-day {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .deals-of-the-day h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* 
+    Make "Deals of the Day" also scroll horizontally 
+    (same approach as .card-grid above)
+  */
+  .deals-of-the-day .card-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+  }
+  
+  /* Hide scrollbar in WebKit for deals as well */
+  .deals-of-the-day .card-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .deals-of-the-day .card-grid > * {
+    flex: 0 0 auto;
+  }
+  
+  /* Mobile Responsive Styling */
+  @media (max-width: 768px) {
+    .product-card {
+      max-width: 200px; /* Smaller cards on mobile */
+      height: 350px;
+    }
+  
+    .banner-image-container {
+      height: 80px; /* Adjust banner image size for smaller screens */
+    }
+  }
+  

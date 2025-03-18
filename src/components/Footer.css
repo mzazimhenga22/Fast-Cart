@@ -1,0 +1,45 @@
+/* src/components/Footer.css */
+
+.global-footer {
+    background-color: #f2f2f2;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+  
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .footer-col h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-col li {
+    margin-bottom: 0.5rem;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  .footer-col li:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    color: #999;
+    margin-top: 1rem;
+  }
+  
