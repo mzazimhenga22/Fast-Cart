@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import NavbarPublic from '../../components/NavbarPublic';
 import SubNavbar from '../../components/SubNavbar';
 import { SingleProductCard } from '../../components/ProductCard';
+import Link from 'next/link';
 import './ShopPage.css';
 import Footer from '@/components/Footer';
 import Modal from '../../components/Modal';
@@ -34,7 +35,6 @@ const Shop: NextPage = () => {
 
   // UI states
   const [view, setView] = useState<'grid' | 'list'>('grid');
-  // The following states for filtering are still here, but they won't affect the product list now.
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [sortOption, setSortOption] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -70,7 +70,7 @@ const Shop: NextPage = () => {
     fetchProducts();
   }, []);
 
-  // Categories and sort options are still defined for UI controls
+  // Categories and sort options for UI controls
   const categories = [
     'Home Appliances', 'Kitchen', 'Offices', 'Mobile Phones', 'TVs',
     'Laptops', 'Cameras', 'Audio', 'Gaming', 'Wearables', 'Smart Home',
@@ -99,7 +99,7 @@ const Shop: NextPage = () => {
     return 0;
   });
 
-  // Pagination / Infinite Scroll: show a subset of products
+  // Pagination: show a subset of products
   const paginatedProducts = sortedProducts.slice(0, currentPage * itemsPerPage);
 
   // Wishlist functionality
@@ -131,7 +131,7 @@ const Shop: NextPage = () => {
     setCurrentPage((prev) => prev + 1);
   };
 
-  // Breadcrumbs for navigation
+  // Breadcrumbs for navigation using Next.js Link for internal navigation
   const breadcrumbs = [
     { label: 'Home', link: '/' },
     { label: 'Shop', link: '/shop' },
@@ -150,7 +150,9 @@ const Shop: NextPage = () => {
       <nav className="breadcrumbs">
         {breadcrumbs.map((crumb, index) => (
           <span key={index}>
-            <a href={crumb.link}>{crumb.label}</a>
+            <Link href={crumb.link}>
+              <a>{crumb.label}</a>
+            </Link>
             {index < breadcrumbs.length - 1 && ' > '}
           </span>
         ))}
@@ -229,7 +231,7 @@ const Shop: NextPage = () => {
         {/* Products Listing */}
         <div className={`shop-products ${view === 'list' ? 'list' : ''}`}>
           {productsLoading ? (
-          <XiaomiLoader />
+            <XiaomiLoader />
           ) : paginatedProducts.length > 0 ? (
             paginatedProducts.map((product) => (
               <div key={product.id} className="product-wrapper">
@@ -276,7 +278,9 @@ const Shop: NextPage = () => {
                 </p>
               </div>
             ))}
-            <button onClick={() => console.log('Compare products', compareList)}>Compare Now</button>
+            <button onClick={() => console.log('Compare products', compareList)}>
+              Compare Now
+            </button>
           </div>
         )}
 
@@ -311,3 +315,4 @@ const Shop: NextPage = () => {
 };
 
 export default Shop;
+
